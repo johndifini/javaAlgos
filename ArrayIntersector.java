@@ -14,23 +14,21 @@ import java.util.*;
  */
 public class ArrayIntersector {
 
-
         public static List<Integer> findIntersection(ArrayList<Integer> a, ArrayList<Integer> b) {
                 // @todo Validate input (e.g. check for null & empty)
 
+                // Data Structure Choice:
+                // Since the results must be unique, let's use a Set.
+                // In addition, let's use an ordered Set (TreeSet) so that we can short
+                // circuit the searching if we find that the lists don't overlap.
+                TreeSet<Integer> setA = new TreeSet<Integer>(a);
+                TreeSet<Integer> setB = new TreeSet<Integer>(b);
 
-// Data Structure Choice:
-// Since the results must be unique, let's use a Set.
-// In addition, let's use an ordered Set (TreeSet) so that we can short
-// circuit the searching if we find that the lists don't overlap.
-TreeSet<Integer> setA = new TreeSet<Integer>(a);
-TreeSet<Integer> setB = new TreeSet<Integer>(b);
 
-
-// Since we already got rid of dupes by using a set,
-// we can use a List for the results.
-// Note: We can't assume a minimum size for initialization?
-List<Integer> result = new ArrayList<Integer>();
+                // Since we already got rid of dupes by using a set,
+                // we can use a List for the results.
+                // Note: We can't assume a minimum size for initialization?
+                List<Integer> result = new ArrayList<Integer>();
 
 
                 // If the "highest" of one set is less than the "lowest" of the other,
