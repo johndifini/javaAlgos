@@ -24,12 +24,10 @@ public class ArrayIntersector {
                 TreeSet<Integer> setA = new TreeSet<Integer>(a);
                 TreeSet<Integer> setB = new TreeSet<Integer>(b);
 
-
                 // Since we already got rid of dupes by using a set,
                 // we can use a List for the results.
                 // Note: We can't assume a minimum size for initialization?
                 List<Integer> result = new ArrayList<Integer>();
-
 
                 // If the "highest" of one set is less than the "lowest" of the other,
                 // nothing to do (i.e. no overlap)
@@ -38,7 +36,6 @@ public class ArrayIntersector {
                         System.out.println("nothing for us to do");
                         return result;
                 }
-
 
                 // For each elem in the smaller Set, check if it exists in the other set
                 if(setA.size() < setB.size()) {
@@ -56,10 +53,8 @@ public class ArrayIntersector {
                         }
                 }
 
-
                 return result;
         }
-
 
         /**
          * Test Cases
@@ -78,7 +73,6 @@ public class ArrayIntersector {
                 result = findIntersection(a, b);
                 System.out.println("result<"+result+">");
 
-
                 // Test Case - random
                 a = new ArrayList<Integer>(Arrays.asList(5,12,2,2,-1));
                 b = new ArrayList<Integer>(Arrays.asList(999,2,999,5,10,-1,0));
@@ -86,7 +80,6 @@ public class ArrayIntersector {
                 System.out.println("b<"+b+">");
                 result = findIntersection(a, b);
                 System.out.println("result<"+result+">");
-
 
                 // Test Case - no overlap
                 a = new ArrayList<Integer>(Arrays.asList(5,12,2,2,1));
@@ -96,7 +89,6 @@ public class ArrayIntersector {
                 result = findIntersection(a, b);
                 System.out.println("result<"+result+">");
 
-
                 // Test Case - no overlap case 2
                 a = new ArrayList<Integer>(Arrays.asList(5,12,12,12,10));
                 b = new ArrayList<Integer>(Arrays.asList(2,4,1));
@@ -104,7 +96,6 @@ public class ArrayIntersector {
                 System.out.println("b<"+b+">");
                 result = findIntersection(a, b);
                 System.out.println("result<"+result+">");
-
 
                 // Test Case - equal sizes
                 a = new ArrayList<Integer>(Arrays.asList(0,0,0));
